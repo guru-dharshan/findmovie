@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3A3939"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:cardBackgroundColor="#000000"
+        app:cardCornerRadius="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_marginLeft="15dp"
+        android:text="TRENDING MOVIES"
+        android:textColor="#FFEB3B"
+        android:textSize="24sp" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:id="@+id/recycletrending"
+                android:layout_height="300dp"
+                android:paddingStart="80dp"
+                android:paddingEnd="80dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_marginLeft="15dp"
+        android:text="NOW PLAYING"
+        android:textColor="#FFEB3B"
+        android:textSize="24sp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/nowplayingrecycle"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginLeft="15dp"
+                android:text="POPULAR"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="215dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/trendingrecycle"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginLeft="15dp"
+                android:text="TOP RATED"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="215dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/topratedgrecycle"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginLeft="15dp"
+                android:text="UPCOMING"
+                android:textColor="#FFEB3B"
+                android:textSize="24sp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="215dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/upcomingrecycle"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
