@@ -2,10 +2,10 @@ package com.example.findmovies;
 
 public class popularmoviedata {
     String title,date,lang,poster,overview;
-    Integer count,rate;
+    Integer count,rate,id;
     Boolean adult;
 
-    public popularmoviedata(String title, String date, String lang, String poster, String overview, Integer count, Integer rate, Boolean adult) {
+    public popularmoviedata(String title, String date, String lang, String poster, String overview, Integer count, Integer rate, Boolean adult,Integer id) {
         this.title = title;
         this.date = date;
         this.lang = lang;
@@ -14,7 +14,16 @@ public class popularmoviedata {
         this.count = count;
         this.rate = rate;
         this.adult = adult;
+        this.id=id;
     }
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
 
     public String getTitle() {
         return title;

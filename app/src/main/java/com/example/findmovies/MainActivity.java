@@ -65,8 +65,10 @@ public class MainActivity extends AppCompatActivity {
         viewPager2 = findViewById(R.id.recycletrending);
         topratedrecycle=findViewById(R.id.topratedgrecycle);
         upcomingrecycler=findViewById(R.id.upcomingrecycle);
-        Intent intent=new Intent(getApplicationContext(),moviefullliste.class);
-        startActivity(intent);
+        //Intent intent=new Intent(getApplicationContext(),moviefullliste.class);
+        //startActivity(intent);
+        //onclick listener
+
 
         String url = "https://api.themoviedb.org/3/trending/movie/day?api_key=d3bf2aee718b2374edaa0b9a3b477cf2";
         String urlnp = "https://api.themoviedb.org/3/movie/now_playing?api_key=d3bf2aee718b2374edaa0b9a3b477cf2&language=en-US&page=1";
@@ -93,8 +95,9 @@ public class MainActivity extends AppCompatActivity {
                         Integer count = jsonObject1.getInt("vote_count");
                         Integer rate = jsonObject1.getInt("vote_average");
                         Boolean adult = jsonObject1.getBoolean("adult");
+                        Integer id=jsonObject1.getInt("id");
 
-                        popularmoviedata = new popularmoviedata(title, date, lang, poster, overview, count, rate, adult);
+                        popularmoviedata = new popularmoviedata(title, date, lang, poster, overview, count, rate, adult,id);
                         popmovielist.add(popularmoviedata);
                     }
 

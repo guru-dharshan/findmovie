@@ -1,14 +1,17 @@
 package com.example.findmovies;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -39,13 +42,31 @@ public class trendadapter extends RecyclerView.Adapter<trendadapter.MyViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull trendadapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull trendadapter.MyViewHolder holder, final int position) {
         try {
             String url = "https://image.tmdb.org/t/p/w500" + trendlist.get(position).getPoster();
             Glide.with(context).load(url)        .transform(new RoundedCornersTransformation(30, 0))
 
                     .into(holder.imgThumbnail);
             holder.moviename.setText(trendlist.get(position).getTitle());
+            holder.cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Toast.makeText(context, trendlist.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context,moviedetails.class);
+                    intent.putExtra("title",trendlist.get(position).getTitle());
+                    intent.putExtra("overview",trendlist.get(position).getOverview());
+                    intent.putExtra("lang",trendlist.get(position).getLang());
+                    intent.putExtra("date",trendlist.get(position).getDate());
+                    intent.putExtra("poster",trendlist.get(position).getPoster());
+                    intent.putExtra("rate",trendlist.get(position).getRate());
+                    intent.putExtra("adult",trendlist.get(position).getAdult());
+                    intent.putExtra("id",trendlist.get(position).getId());
+                    context.startActivity(intent);
+
+
+                }
+            });
 
         }
 
@@ -64,11 +85,13 @@ public class trendadapter extends RecyclerView.Adapter<trendadapter.MyViewHolder
 
         ImageView imgThumbnail;
         TextView moviename;
+        CardView cardView;
         public MyViewHolder(View itemView) {
             super(itemView);
 
             imgThumbnail=itemView.findViewById(R.id.nowplayingimageid);
             moviename=itemView.findViewById(R.id.nowplayingnameid);
+            cardView=itemView.findViewById(R.id.nowplayingmoviecard);
 
 
         }

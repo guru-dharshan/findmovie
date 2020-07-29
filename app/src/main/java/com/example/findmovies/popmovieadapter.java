@@ -1,6 +1,7 @@
 package com.example.findmovies;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,10 +40,25 @@ public class popmovieadapter extends RecyclerView.Adapter<popmovieadapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull popmovieadapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull popmovieadapter.MyViewHolder holder, final int position) {
         try {
             String url = "https://image.tmdb.org/t/p/w500" + popularmoviedataList1.get(position).getPoster();
             Glide.with(context).load(url).into(holder.imgThumbnail);
+            holder.imgThumbnail.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context,moviedetails.class);
+                    intent.putExtra("title",popularmoviedataList1.get(position).getTitle());
+                    intent.putExtra("overview",popularmoviedataList1.get(position).getOverview());
+                    intent.putExtra("lang",popularmoviedataList1.get(position).getLang());
+                    intent.putExtra("date",popularmoviedataList1.get(position).getDate());
+                    intent.putExtra("poster",popularmoviedataList1.get(position).getPoster());
+                    intent.putExtra("rate",popularmoviedataList1.get(position).getRate());
+                    intent.putExtra("adult",popularmoviedataList1.get(position).getAdult());
+                    intent.putExtra("id",popularmoviedataList1.get(position).getId());
+                    context.startActivity(intent);
+                }
+            });
         }
         catch (Exception e){
                 Log.i("error",e.toString());
@@ -62,6 +78,7 @@ public class popmovieadapter extends RecyclerView.Adapter<popmovieadapter.MyView
             super(itemView);
 
             imgThumbnail=itemView.findViewById(R.id.imageslidepop);
+            //cardView=itemView.findViewsWithText(R.id.);
 
 
         }
