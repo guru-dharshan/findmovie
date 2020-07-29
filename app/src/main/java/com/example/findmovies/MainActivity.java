@@ -53,6 +53,46 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView upcomingrecycler;
     public static List<trendmoviedata> upcominglist = new ArrayList<>();
 
+public void trendmovies(View view){
+
+    Intent intent = new Intent(this,moviefullliste.class);
+    intent.putExtra("title","Trending Movie");
+    intent.putExtra("url","https://api.themoviedb.org/3/trending/movie/day?api_key=d3bf2aee718b2374edaa0b9a3b477cf2");
+    startActivity(intent);
+
+}
+    public void npmovies(View view){
+
+        Intent intent = new Intent(this,moviefullliste.class);
+        intent.putExtra("title","NowPlaying Movie");
+        intent.putExtra("url","https://api.themoviedb.org/3/movie/now_playing?api_key=d3bf2aee718b2374edaa0b9a3b477cf2&language=en-US&page=1");
+        startActivity(intent);
+
+    }
+    public void topmovies(View view){
+
+        Intent intent = new Intent(this,moviefullliste.class);
+        intent.putExtra("title","Top Rated Movie");
+        intent.putExtra("url","https://api.themoviedb.org/3/movie/top_rated?api_key=d3bf2aee718b2374edaa0b9a3b477cf2&language=en-US&page=1");
+        startActivity(intent);
+
+    }
+    public void upcomingmovies(View view){
+
+        Intent intent = new Intent(this,moviefullliste.class);
+        intent.putExtra("title","upcoming Movie");
+        intent.putExtra("url","https://api.themoviedb.org/3/movie/upcoming?api_key=d3bf2aee718b2374edaa0b9a3b477cf2&language=en-US&page=1");
+        startActivity(intent);
+
+    }
+    public void popmovies(View view){
+
+        Intent intent = new Intent(this,moviefullliste.class);
+        intent.putExtra("title","Popular Movie");
+        intent.putExtra("url","https://api.themoviedb.org/3/movie/popular?api_key=d3bf2aee718b2374edaa0b9a3b477cf2&language=en-US&page=1");
+        startActivity(intent);
+
+    }
 
 
 

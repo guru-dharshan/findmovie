@@ -32,6 +32,7 @@
         android:fontFamily="@font/roboto_bold"
         android:layout_marginLeft="15dp"
         android:text="TRENDING MOVIES"
+        android:onClick="trendmovies"
         android:textColor="#FFEB3B"
         android:textSize="24sp" />
 
@@ -49,6 +50,7 @@
         android:fontFamily="@font/roboto_bold"
         android:layout_marginLeft="15dp"
         android:text="NOW PLAYING"
+        android:onClick="npmovies"
         android:textColor="#FFEB3B"
         android:textSize="24sp" />
     <androidx.recyclerview.widget.RecyclerView
@@ -63,6 +65,7 @@
                 android:fontFamily="@font/roboto_bold"
                 android:layout_marginLeft="15dp"
                 android:text="POPULAR"
+                android:onClick="popmovies"
                 android:textColor="#FFEB3B"
                 android:textSize="24sp" />
             <androidx.recyclerview.widget.RecyclerView
@@ -78,6 +81,7 @@
                 android:fontFamily="@font/roboto_bold"
                 android:layout_marginLeft="15dp"
                 android:text="TOP RATED"
+                android:onClick="topmovies"
                 android:textColor="#FFEB3B"
                 android:textSize="24sp" />
             <androidx.recyclerview.widget.RecyclerView
@@ -93,6 +97,7 @@
                 android:fontFamily="@font/roboto_bold"
                 android:layout_marginLeft="15dp"
                 android:text="UPCOMING"
+                android:onClick="upcomingmovies"
                 android:textColor="#FFEB3B"
                 android:textSize="24sp" />
             <androidx.recyclerview.widget.RecyclerView

@@ -1,7 +1,9 @@
 package com.example.findmovies;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,23 +26,27 @@ import java.util.List;
 
 public class moviefullliste extends AppCompatActivity {
     trendmoviedata trendmoviedata;
-    List<trendmoviedata>list = new ArrayList<>();
     RecyclerView recycle;
     int page;
+    List<trendmoviedata>list ;
+
+    TextView moviestopic;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fullmovielistlayout);
-        final String[] url = {"https://api.themoviedb.org/3/movie/now_playing?api_key=d3bf2aee718b2374edaa0b9a3b477cf2&language=en-US&page=1"};
+        list= new ArrayList<>();
+        moviestopic=findViewById(R.id.topic);
+        Intent intent=getIntent();
+        String url=intent.getExtras().getString("url");
+        String title=intent.getExtras().getString("title");
         recycle = findViewById(R.id.fullmovierecycle);
+        moviestopic.setText(title);
 
-        fetchdata(url[0]);
-        for(int j=2;j<=page;j++){
-            url[0] = url[0].substring(0, url[0].length()-1) + "2";
-            Log.i("url",url[0]);
-            fetchdata(url[0]);
+        fetchdata(url);
+
 
         }
-    }
+
         //fetch data
         public  void fetchdata(String url){
         StringRequest requestnp = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
