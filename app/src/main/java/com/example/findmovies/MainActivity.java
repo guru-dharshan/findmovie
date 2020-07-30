@@ -3,8 +3,11 @@ package com.example.findmovies;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -105,9 +108,8 @@ public void trendmovies(View view){
         viewPager2 = findViewById(R.id.recycletrending);
         topratedrecycle=findViewById(R.id.topratedgrecycle);
         upcomingrecycler=findViewById(R.id.upcomingrecycle);
-        //Intent intent=new Intent(getApplicationContext(),moviefullliste.class);
-        //startActivity(intent);
-        //onclick listener
+
+
 
 
         String url = "https://api.themoviedb.org/3/trending/movie/day?api_key=d3bf2aee718b2374edaa0b9a3b477cf2";
@@ -189,6 +191,12 @@ public void trendmovies(View view){
         fetchdata(urlupcoming,upcominglist,upcomingrecycler);
     }
 
+
+  public void search(View view){
+    Intent search = new Intent(this,search.class);
+    startActivity(search);
+
+  }
 
     public void fetchdata(String url, final List list, RecyclerView recycle) {
         //now playing

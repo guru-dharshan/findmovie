@@ -8,6 +8,32 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#000000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:background="#000"
+            android:fontFamily="@font/roboto_bold"
+            android:text="fMOVIE"
+            android:textColor="#F30B0B"
+            android:textSize="24sp" />
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_search_24"
+            android:layout_marginLeft="370dp"
+            android:layout_marginTop="5dp"
+            android:onClick="search"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,22 +45,16 @@
             android:orientation="vertical" >
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:cardBackgroundColor="#4A4949"
-        app:cardCornerRadius="20dp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/roboto_bold"
-        android:layout_marginLeft="15dp"
-        android:text="TRENDING MOVIES"
-        android:onClick="trendmovies"
-        android:textColor="#FFEB3B"
-        android:textSize="24sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:onClick="trendmovies"
+                android:text="TRENDING MOVIES"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:layout_marginTop="10dp"
@@ -43,30 +63,32 @@
                 android:layout_height="300dp"
                 android:paddingStart="80dp"
                 android:paddingEnd="80dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/roboto_bold"
-        android:layout_marginLeft="15dp"
-        android:text="NOW PLAYING"
-        android:onClick="npmovies"
-        android:textColor="#FFEB3B"
-        android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:onClick="npmovies"
+                android:text="NOW PLAYING"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="215dp"
         android:layout_marginTop="10dp"
         android:id="@+id/nowplayingrecycle"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/roboto_bold"
-                android:layout_marginLeft="15dp"
-                android:text="POPULAR"
                 android:onClick="popmovies"
-                android:textColor="#FFEB3B"
+                android:text="POPULAR"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp" />
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -77,12 +99,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/roboto_bold"
-                android:layout_marginLeft="15dp"
-                android:text="TOP RATED"
                 android:onClick="topmovies"
-                android:textColor="#FFEB3B"
+                android:text="TOP RATED"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp" />
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -93,12 +115,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/roboto_bold"
-                android:layout_marginLeft="15dp"
-                android:text="UPCOMING"
                 android:onClick="upcomingmovies"
-                android:textColor="#FFEB3B"
+                android:text="UPCOMING"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp" />
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
