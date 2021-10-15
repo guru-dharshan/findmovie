@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ public class moviedetails extends AppCompatActivity {
     CardView cardView;
     RecyclerView similarrecycler;
     trendmoviedata trendmoviedata;
+    String shareData="";
 
 
 
@@ -86,6 +88,9 @@ public class moviedetails extends AppCompatActivity {
 
        String url1=" https://api.themoviedb.org/3/movie/"+id.toString()+"/similar?api_key=d3bf2aee718b2374edaa0b9a3b477cf2&language=en-US&page=1";
        fetchdata(url1,similarlist,similarrecycler);
+
+        shareData="Movie Details:\n"+"Title: "+title1+"\n"+"Release Date: "+date1+"\n"+"Language: "+lang1+"\n"+"Overview: "+overview1+"\n"+
+                "Rate: "+rate1+"\n"+"Adult: "+adult1;
 
 
     }
@@ -145,5 +150,13 @@ public class moviedetails extends AppCompatActivity {
         } catch (Exception e) {
             Log.i("error", e.toString());
         }
+    }
+
+    public void ShareNote(View view) {
+        Intent share=new Intent(Intent.ACTION_SEND);
+
+        share.putExtra(Intent.EXTRA_TEXT,shareData);
+        share.setType("text/plain");
+        startActivity(share);
     }
 }
