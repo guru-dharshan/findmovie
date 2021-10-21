@@ -11,9 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".search"></activity>
-        <activity android:name=".moviedetails" />
-        <activity android:name=".MainActivity">
+
+        <activity
+            android:name=".ui.search"
+            android:exported="true" />
+        <activity
+            android:name=".ui.moviedetails"
+            android:exported="true" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +28,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".moviefullliste"
+            android:name=".ui.moviefullliste"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

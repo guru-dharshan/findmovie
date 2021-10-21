@@ -4,36 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#000"
-    tools:context=".search">
+    android:orientation="vertical"
+    tools:context=".ui.search">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="53dp"
-        app:cardCornerRadius="10dp"
-        app:cardBackgroundColor="#070707">
-        <ImageView
-            android:layout_width="34dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_baseline_search_24"
-            android:layout_marginLeft="360dp"
-            android:onClick="searchit"/>
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="20dp"
-            android:id="@+id/searchbox"
-            android:background="#FFFFFF"/>
+        app:cardBackgroundColor="#070707"
+        app:cardCornerRadius="10dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="5">
 
+            <EditText
+                android:id="@+id/searchbox"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="4"
+                android:background="#FFFFFF"
+                android:maxLines="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="searchIt"
+                android:src="@drawable/ic_baseline_search_24" />
+
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchrecycle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:id="@+id/searchrecycle"/>
+        android:layout_margin="20dp" />
+
 </LinearLayout>

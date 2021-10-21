@@ -1,11 +1,11 @@
-package com.example.findmovies;
+package com.example.findmovies.model;
 
-public class trendmoviedata {
+public class trendMovieData {
     String title, date, lang, poster, overview;
     Integer count, rate, id;
     Boolean adult;
 
-    public trendmoviedata(String title, String date, String lang, String poster, String overview, Integer count, Integer rate, Integer id, Boolean adult) {
+    public trendMovieData(String title, String date, String lang, String poster, String overview, Integer count, Integer rate, Integer id, Boolean adult) {
         this.title = title;
         this.date = date;
         this.lang = lang;
