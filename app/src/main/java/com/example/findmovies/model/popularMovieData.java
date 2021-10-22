@@ -1,11 +1,11 @@
-package com.example.findmovies;
+package com.example.findmovies.model;
 
-public class popularmoviedata {
-    String title,date,lang,poster,overview;
-    Integer count,rate,id;
+public class popularMovieData {
+    String title, date, lang, poster, overview;
+    Integer count, rate, id;
     Boolean adult;
 
-    public popularmoviedata(String title, String date, String lang, String poster, String overview, Integer count, Integer rate, Boolean adult,Integer id) {
+    public popularMovieData(String title, String date, String lang, String poster, String overview, Integer count, Integer rate, Boolean adult, Integer id) {
         this.title = title;
         this.date = date;
         this.lang = lang;
@@ -14,8 +14,9 @@ public class popularmoviedata {
         this.count = count;
         this.rate = rate;
         this.adult = adult;
-        this.id=id;
+        this.id = id;
     }
+
     public Integer getId() {
         return id;
     }

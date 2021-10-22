@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">findmovies</string>
+    <string name="find_movie">FIND MOVIE</string>
+    <string name="now_playing">NOW PLAYING</string>
+    <string name="popular">POPULAR</string>
+    <string name="top_rated">TOP RATED</string>
+    <string name="upcoming">UPCOMING</string>
 </resources>
